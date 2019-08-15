@@ -13,11 +13,11 @@ def randsrc(dim=1, qnt=10, src=np.array([-3, -1, 1, 3])):
     return outVar
 
 def intersperse(lst, item, interval):
-    result = [item] * (len(lst) * interval)
+    result = [item] * ((len(lst)-1) * interval+1)
     result[0::interval] = lst
     return result
 
-g = np.ones((1,99))
+g = np.ones((1,100))
 g = np.concatenate((g, 0), axis=None)
 #l = [1, 2, 3, 4, 5]
 #intersperse(l, 0, 100)
@@ -25,7 +25,7 @@ print(g)
 
 am = randsrc(qnt=5)
 print(am)
-am = intersperse(am[0], 0, 99)
+am = intersperse(am[0], 0, 100)
 
 s = np.convolve(am, g)
 
