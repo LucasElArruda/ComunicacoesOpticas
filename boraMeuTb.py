@@ -24,12 +24,21 @@ g = np.concatenate((g, 0), axis=None)
 print(g)
 
 am = randsrc(qnt=5)
-print(am)
 am = intersperse(am[0], 0, 100)
+print(am)
 
 s = np.convolve(am, g)
 
 #plt.stem(s, use_line_collection=True)
-plt.plot(s)
-plt.show()
+#plt.plot(s)
+#plt.show()
 #plt.plot(np.sinc(np.arange(10,step=0.1)))
+t2 = np.arange(1, 500, 0.5)
+alfa = 1
+T = 100
+g2 = (np.sin(2*np.pi*t2/T))/(2*np.pi*t2/T)*np.cos(alfa*np.pi*t2/T)/(1-(2*alfa*t2/T)**2)
+
+s2 = np.convolve(am, g2)
+print("Olha o g2[0]: {}".format(g2[0]))
+plt.plot(g2)
+plt.show()
