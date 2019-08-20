@@ -2,8 +2,6 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
-print("ae")
-
 def randsrc(dim=1, qnt=10, src=np.array([-3, -1, 1, 3])):
     aux = np.array([])
     outVar = np.empty(shape=(0,qnt),dtype=int)
@@ -33,10 +31,14 @@ s = np.convolve(am, g)
 #plt.plot(s)
 #plt.show()
 #plt.plot(np.sinc(np.arange(10,step=0.1)))
-t2 = np.arange(1, 500, 0.5)
-alfa = 1
+t2 = np.arange(0, 500, 0.5)
+alfa = 0
 T = 100
+
+
 g2 = (np.sin(2*np.pi*t2/T))/(2*np.pi*t2/T)*np.cos(alfa*np.pi*t2/T)/(1-(2*alfa*t2/T)**2)
+g[0] = 1
+
 
 s2 = np.convolve(am, g2)
 print("Olha o g2[0]: {}".format(g2[0]))
