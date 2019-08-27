@@ -76,6 +76,3 @@ plt.stem(yRx2[500::T])
 
 
 plt.show()
-
-
-print(g)
